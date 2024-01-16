@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="/css/form.css">
+<h1 id="main-heading">REGISTRATION FORM</h1>
+<div id="users-and-form">
+<div id="users">
+    <h4>All Registered User</h4>
+    <ul>
+        <%for(let user of users) {%>
+            <li id="user-list">
+                <a href="/user/<%=user.id%>"><%=user.firstName%></a>
+            </li>
+        <%}%>
+    </ul>
+</div>
+
+   <div id="form">
+   <form action="/register" method="post" >
+    <div class="row mb-3 space-btw" >
+        <label for="inputEmail3" class="col-sm-2 col-form-label">First Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" value id="inputFirstName" placeholder="Enter First Name" name="firstName"  required >
+          <span id="firstNameError" class="error"></span>
+
+        </div>
+    </div>
+    <div class="row mb-3 space-btw">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Last Name:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputLastName" placeholder="Enter Last Name" name="lastName" required >
+            <span id="lastNameError" class="error"></span>
+
+        </div>
+    </div>
+    <div class="row mb-3 space-btw">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputEmail3" placeholder="Enter Email" name="email" required >
+          <span id="emailError" class="error"></span>
+
+        </div>
+    </div>
+    <div class="col-md-6 space-btw">
+        <label for="inputState" class="form-label">Country:</label>
+        <select id="inputState" id="country" class="country form-select" name="country" value>
+          <option type="dropdown" selected id="getCountry" >Select Country</option>
+        </select>
+    </div>
+    <fieldset class="row mb-3 space-btw">
+        <legend class="col-form-label col-sm-2 pt-0">Gender:</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="male" checked>
+            <label class="form-check-label" for="gridRadios1">
+              Male
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="female">
+            <label class="form-check-label" for="gridRadios2">
+                Female
+            </label>
+          </div>
+    </fieldset>
+    <div >
+    <label id="dob-label"> DOB:</label>
+        <label for="dobDay">Day:</label>
+    <input type="number" id="dobDay" name="dobDay" placeholder="Day" required min="1" max="31" onchange="validateDOB()">
+
+    <label for="dobMonth">Month:</label>
+    <input type="number" id="dobMonth" name="dobMonth" placeholder="Month" required min="1" max="12" onchange="validateDOB()">
+
+    <label for="dobYear">Year:</label>
+    <input type="number" id="dobYear" name="dobYear" placeholder="Year" required min="1900" max="2023" onchange="validateDOB()">
+
+    <span id="dobError" class="error"></span>
+</div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+   </form>
+</div>
+</div>
+   
+<script src="/js/basic.js">
+
+ 
+</script>
+
+ 

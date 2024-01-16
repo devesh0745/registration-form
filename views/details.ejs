@@ -1,0 +1,36 @@
+<div id="btn-and-user">
+    <button id="back-btn" class="btn btn-dark"><a id="back" href="/">Back</a></button>
+    <h1 id="user-details-heading">USER DETAILS</h1>
+</div>
+<div id="user-details">
+
+    <div class="info">
+        <span class="type">First Name: </span><span class="value"><%=info.firstName%></span>
+    </div>
+    <div class="info">
+        <span class="type">Last Name: </span><span class="value"><%=info.lastName%></span>
+    </div>
+    <div class="info">
+        <span class="type">Email: </span><span class="value"><%=info.email%></span>
+    </div >
+    <div class="info">
+        <span class="type">Country: </span><span class="value"><%=info.country%></span>
+    </div>
+    <div class="info">
+        <span class="type">Gender: </span><span class="value"><%=info.gender%></span>
+    </div>
+    <div class="info">
+        <span class="type">DOB: </span><span class="value"><%=info.dobDay%>/<%=info.dobMonth%>/<%=info.dobYear%></span>
+    </div>
+        <%var day=info.dobDay%>
+        <%var month=info.dobMonth%>
+        <%var year=info.dobYear%>
+        <% const dob = new Date(year, month - 1, day);%>
+        <%const today = new Date()%>
+        <%var age = today.getFullYear() - dob.getFullYear()%>
+        <%console.log(age)%>
+    <div class="info">
+        <span class="type">Age: </span><span class="value"><%=age%></span>
+    </div>
+       
+</div>
