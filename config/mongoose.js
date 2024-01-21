@@ -1,7 +1,8 @@
 //Connecting to database
 const mongoose=require('mongoose');
+require("dotenv").config();
 
-mongoose.connect("mongodb://0.0.0.0/registration");
+mongoose.connect(process.env.MONGODB_URL);
 
 const db=mongoose.connection;
 db.on('error',console.error.bind(console,'Error in connecting MongoDB'));
